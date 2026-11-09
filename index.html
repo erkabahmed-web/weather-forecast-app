@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#edf5fb">
+    <meta name="description" content="A simple five-day weather forecast for cities around the world.">
+    <title>Weather Forecast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="module" src="assets/js/app.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Weather Forecast home">
+          <span class="brand-mark" aria-hidden="true">☀</span>
+          <span>weather<span class="brand-light">wise</span></span>
+        </a>
+        <p class="topbar-note">A little clarity for your day</p>
+      </header>
+
+      <section class="search-section" aria-labelledby="page-title">
+        <p class="eyebrow">YOUR LOCAL FORECAST</p>
+        <h1 id="page-title">What’s the weather<br class="mobile-break"> looking like?</h1>
+        <p class="page-intro">Find current conditions and a five-day outlook for any city.</p>
+
+        <form class="search-form" id="search-form" novalidate>
+          <label class="sr-only" for="city-input">City name</label>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input
+            id="city-input"
+            name="city"
+            type="search"
+            placeholder="Search for a city..."
+            autocomplete="off"
+            aria-describedby="search-hint"
+            required
+          >
+          <button class="search-button" type="submit">
+            <span>Search</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+        <p class="search-hint" id="search-hint">Try “Addis Ababa”, “Tokyo”, or “New York”</p>
+
+        <form class="location-picker" id="location-form" hidden>
+          <label for="location-select">We found a few places. Which one?</label>
+          <div class="location-picker-controls">
+            <select id="location-select" name="location" required></select>
+            <button class="secondary-button" type="submit">Show forecast <span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </section>
+
+      <section class="results" id="results" aria-live="polite" aria-busy="false" aria-label="Weather forecast">
+        <div class="empty-state" id="empty-state">
+          <span class="empty-icon" aria-hidden="true">☼</span>
+          <p>Your forecast is just around the corner.</p>
+          <span>Search for a city to get started.</span>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>Made for curious skies</span>
+        <span class="footer-divider" aria-hidden="true">·</span>
+        <span>Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></span>
+      </footer>
+    </main>
+  </body>
+</html>
